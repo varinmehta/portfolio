@@ -51,8 +51,8 @@ export const Header = () => {
 
     return (
         <>
-            <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9}/>
-            <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9}/>
+            <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
+            <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
             <Flex
                 fitHeight
                 className={styles.position}
@@ -64,7 +64,7 @@ export const Header = () => {
                     paddingLeft="12" fillWidth
                     alignItems="center"
                     textVariant="body-default-s">
-                    { display.location && (
+                    {display.location && (
                         <Flex hide="s">
                             {person.location}
                         </Flex>
@@ -72,85 +72,55 @@ export const Header = () => {
                 </Flex>
                 <Flex fillWidth justifyContent="center">
                     <Flex
-                        background="surface" border="neutral-medium"  radius="m-4" shadow="l"
+                        background="surface" border="neutral-medium" radius="m-4" shadow="l"
                         padding="4"
                         justifyContent="center">
                         <Flex
                             gap="4"
                             textVariant="body-default-s">
-                            { routes['/'] && (
+                            {routes['/'] && (
                                 <>
                                     <ToggleButton
                                         className="s-flex-hide"
                                         prefixIcon="home"
                                         href="/"
                                         label={home.label}
-                                        selected={pathname === "/"}/>
+                                        selected={pathname === "/"} />
                                     <ToggleButton
                                         className="s-flex-show"
                                         prefixIcon="home"
                                         href="/"
-                                        selected={pathname === "/"}/>
+                                        selected={pathname === "/"} />
                                 </>
                             )}
-                            { routes['/about'] && (
+                            {routes['/about'] && (
                                 <>
                                     <ToggleButton
                                         className="s-flex-hide"
                                         prefixIcon="person"
                                         href="/about"
                                         label={about.label}
-                                        selected={pathname === "/about"}/>
+                                        selected={pathname === "/about"} />
                                     <ToggleButton
                                         className="s-flex-show"
                                         prefixIcon="person"
                                         href="/about"
-                                        selected={pathname === "/about"}/>
+                                        selected={pathname === "/about"} />
                                 </>
                             )}
-                            { routes['/work'] && (
-                                <>
-                                    <ToggleButton
-                                        className="s-flex-hide"
-                                        prefixIcon="grid"
-                                        href="/work"
-                                        label={work.label}
-                                        selected={pathname.startsWith('/work')}/>
-                                    <ToggleButton
-                                        className="s-flex-show"
-                                        prefixIcon="grid"
-                                        href="/work"
-                                        selected={pathname.startsWith('/work')}/>
-                                </>
-                            )}
-                            { routes['/blog'] && (
+                            {routes['/blog'] && (
                                 <>
                                     <ToggleButton
                                         className="s-flex-hide"
                                         prefixIcon="book"
                                         href="/blog"
                                         label={blog.label}
-                                        selected={pathname.startsWith('/blog')}/>
+                                        selected={pathname.startsWith('/blog')} />
                                     <ToggleButton
                                         className="s-flex-show"
                                         prefixIcon="book"
                                         href="/blog"
-                                        selected={pathname.startsWith('/blog')}/>
-                                </>
-                            )}
-                            { routes['/gallery'] && (
-                                <>
-                                    <ToggleButton
-                                        className="s-flex-hide"
-                                        prefixIcon="gallery"
-                                        href="/gallery"
-                                        label={gallery.label}
-                                        selected={pathname.startsWith('/gallery')}/>
-                                    <ToggleButton
-                                        className="s-flex-show"
-                                        prefixIcon="gallery"
-                                        href="/gallery"
-                                        selected={pathname.startsWith('/gallery')}/>
+                                        selected={pathname.startsWith('/blog')} />
                                 </>
                             )}
                         </Flex>
@@ -163,8 +133,8 @@ export const Header = () => {
                         textVariant="body-default-s"
                         gap="20">
                         <Flex hide="s">
-                            { display.time && (
-                                <TimeDisplay timeZone={person.location}/>
+                            {display.time && (
+                                <TimeDisplay timeZone={person.location} />
                             )}
                         </Flex>
                     </Flex>
