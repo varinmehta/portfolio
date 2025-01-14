@@ -3,7 +3,6 @@ import { baseURL } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
 import { person, about, social } from '@/app/resources/content';
-
 export async function generateMetadata() {
     const title = about.title;
     const description = about.description;
@@ -53,7 +52,6 @@ export default function About() {
         {
             title: about.technical.title,
             display: about.technical.display,
-            items: about.technical.skills.map(skill => skill.title)
         },
     ]
     return (
@@ -343,51 +341,23 @@ export default function About() {
                                 variant="display-strong-s" marginBottom="40">
                                 {about.technical.title}
                             </Heading>
-                            <Flex
-                                direction="column"
-                                fillWidth gap="l">
-                                {about.technical.skills.map((skill, index) => (
-                                    <Flex
-                                        key={`${skill}-${index}`}
-                                        fillWidth gap="4"
-                                        direction="column">
-                                        <Text
-                                            variant="heading-strong-l">
-                                            {skill.title}
-                                        </Text>
-                                        <Text
-                                            variant="body-default-m"
-                                            onBackground="neutral-weak">
-                                            {skill.description}
-                                        </Text>
-                                        {skill.images && skill.images.length > 0 && (
-                                            <Flex
-                                                fillWidth paddingTop="m" gap="12"
-                                                wrap>
-                                                {skill.images.map((image, index) => (
-                                                    <Flex
-                                                        key={index}
-                                                        border="neutral-medium"
-
-                                                        radius="m"
-                                                        minWidth={image.width} height={image.height}>
-                                                        <SmartImage
-                                                            enlarge
-                                                            radius="m"
-                                                            sizes={image.width.toString()}
-                                                            alt={image.alt}
-                                                            src={image.src} />
-                                                    </Flex>
-                                                ))}
-                                            </Flex>
-                                        )}
-                                    </Flex>
-                                ))}
+                            <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
+                                Codechef
+                            </Text>
+                            <Flex style={{ width: '120%', height: '600px' }}>
+                                <iframe
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        border: 'none',
+                                    }}
+                                    src="https://codechef-api.vercel.app/rating/varinmehta"
+                                ></iframe>
                             </Flex>
                         </>
                     )}
                 </Flex>
             </Flex>
-        </Flex>
+        </Flex >
     );
 }
