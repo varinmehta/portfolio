@@ -3,6 +3,7 @@ import { baseURL } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
 import { person, about, social } from '@/app/resources/content';
+import { Analytics } from '@vercel/analytics/react';
 export async function generateMetadata() {
     const title = about.title;
     const description = about.description;
@@ -81,6 +82,7 @@ export default function About() {
                     }),
                 }}
             />
+            <Analytics />
             {about.tableOfContent.display && (
                 <Flex
                     style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}
