@@ -52,6 +52,7 @@ export default function About() {
         {
             title: about.technical.title,
             display: about.technical.display,
+            items: []
         },
     ]
     return (
