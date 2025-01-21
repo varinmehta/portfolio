@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Heading, Flex, Text, Button,  Avatar, RevealFx, Arrow, Column } from '@/once-ui/components';
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 
-import { baseURL, routes } from '@/app/resources'; 
+import { baseURL, routes } from '@/app/resources';
 import { home, about, person, newsletter } from '@/app/resources/content';
 import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
+import { Analytics } from "@vercel/analytics/react"
 
 export async function generateMetadata() {
 	const title = home.title;
@@ -36,9 +37,9 @@ export async function generateMetadata() {
 		},
 	};
 }
-
 export default function Home() {
 	return (
+
 		<Column
 			maxWidth="m" gap="xl"
 			alignItems="center">
@@ -64,6 +65,7 @@ export default function Home() {
 					}),
 				}}
 			/>
+			<Analytics />
 			<Column
 				fillWidth
 				paddingY="l" gap="m">
@@ -99,18 +101,18 @@ export default function Home() {
 								alignItems="center">
 								{about.avatar.display && (
 									<Avatar
-										style={{marginLeft: '-0.75rem', marginRight: '0.25rem'}}
+										style={{ marginLeft: '-0.75rem', marginRight: '0.25rem' }}
 										src={person.avatar}
-										size="m"/>
-									)}
-									{about.title}
+										size="m" />
+								)}
+								{about.title}
 							</Flex>
 						</Button>
 					</RevealFx>
 				</Column>
 			</Column>
 			<RevealFx translateY="16" delay={0.6}>
-				<Projects range={[1,1]}/>
+				<Projects range={[1, 1]} />
 			</RevealFx>
 			{routes['/blog'] && (
 				<Flex
@@ -126,12 +128,12 @@ export default function Home() {
 					</Flex>
 					<Flex
 						flex={3} paddingX="20">
-						<Posts range={[1,2]} columns="2"/>
+						<Posts range={[1, 2]} columns="2" />
 					</Flex>
 				</Flex>
 			)}
-			<Projects range={[2]}/>
-			{ newsletter.display &&
+			<Projects range={[2]} />
+			{newsletter.display &&
 				<Mailchimp newsletter={newsletter} />
 			}
 		</Column>
