@@ -146,7 +146,7 @@ const about = {
             {
                 name: "Sardar Patel Institute of Technology - University of Mumbai",
                 cgpa: "8.61",
-                description: <>Computer Engineering.</>,
+                description: <>Computer Engineering</>,
                 extra: (
                     <>
                         Part of the Forum for Aspirig Computer Engineers (FACE)
