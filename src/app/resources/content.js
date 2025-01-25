@@ -157,7 +157,7 @@ const about = {
             {
                 name: "Swami Vivekanand International School - ICSE",
                 percent: "97.67%",
-                achievements: <>Class Prefect.Ranked 3rd in School</>,
+                achievements: <>Class Prefect. Ranked 3rd in School</>,
             },
         ],
     },
