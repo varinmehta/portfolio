@@ -354,7 +354,7 @@ export default function About() {
                                         height: '100%',
                                         border: 'none',
                                     }}
-                                    src="https://codechef-api.vercel.app/rating/vrinamehta"
+                                    src="https://codechef-api.vercel.app/rating/varinmehta"
                                 ></iframe>
                             </Flex>
                         </>
