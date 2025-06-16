@@ -31,20 +31,31 @@ export default function LeetCodeRatingChart() {
         fetch('/api/leetcode-rating')
             .then(res => res.json())
             .then(data => {
+                const ratings = data.map((entry: any) => entry.rating);
+                const times = data.map((entry: any) => entry.time);
+
+                const pointRadius = ratings.map((rating: number, index: number) => {
+                    if (index === 0) return 3; // Always show the first point
+                    return rating === ratings[index - 1] ? 0 : 3; // Hide if same as previous
+                });
+
                 setChartData({
-                    labels: data.map((entry: any) => entry.time),
+                    labels: times,
                     datasets: [
                         {
                             label: 'LeetCode Contest Rating',
-                            data: data.map((entry: any) => entry.rating),
+                            data: ratings,
                             borderColor: 'rgb(255, 99, 132)',
                             backgroundColor: 'rgba(255, 99, 132, 0.5)',
                             tension: 0.3,
                             fill: true,
+                            pointRadius: pointRadius,
+                            pointHoverRadius: 5,
                         },
                     ],
                 });
             });
+
     }, []);
 
     if (!chartData) return <p>Loading LeetCode graph...</p>;
