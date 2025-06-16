@@ -357,6 +357,25 @@ export default function About() {
                                     src="https://codechef-api.vercel.app/rating/mehtavarin"
                                 ></iframe>
                             </Flex>
+                            <Heading
+                                as="h2"
+                                id={about.technical.title}
+                                variant="display-strong-s" marginBottom="40">
+                                {about.technical.title}
+                            </Heading>
+                            <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
+                                LeetCode
+                            </Text>
+                            <Flex style={{ width: '120%', height: '600px' }}>
+                                <iframe
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        border: 'none',
+                                    }}
+                                    src="https://leetcard.jacoblin.cool/vrinamehta?theme=dark&ext=contest"
+                                ></iframe>
+                            </Flex>
                         </>
                     )}
                 </Flex>
