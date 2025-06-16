@@ -364,21 +364,6 @@ export default function About() {
                                 ></iframe>
                             </Flex>
 
-                            {/* LeetCode Static Card */}
-                            <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
-                                LeetCode (Static Card)
-                            </Text>
-                            <Flex style={{ width: '100%', height: '300px', marginBottom: '40px' }}>
-                                <iframe
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        border: 'none',
-                                    }}
-                                    src="https://leetcard.jacoblin.cool/vrinamehta?theme=dark&ext=contest"
-                                ></iframe>
-                            </Flex>
-
                             {/* LeetCode Interactive Graph */}
                             <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
                                 LeetCode (Interactive Graph)
