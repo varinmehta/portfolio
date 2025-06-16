@@ -4,6 +4,8 @@ import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
 import { person, about, social } from '@/app/resources/content';
 import { Analytics } from '@vercel/analytics/react';
+import LeetCodeRatingChart from '@/components/LeetCodeRatingChart';
+
 export async function generateMetadata() {
     const title = about.title;
     const description = about.description;
@@ -341,13 +343,17 @@ export default function About() {
                             <Heading
                                 as="h2"
                                 id={about.technical.title}
-                                variant="display-strong-s" marginBottom="40">
+                                variant="display-strong-s"
+                                marginBottom="40"
+                            >
                                 {about.technical.title}
                             </Heading>
+
+                            {/* CodeChef */}
                             <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
-                                Codechef
+                                CodeChef
                             </Text>
-                            <Flex style={{ width: '120%', height: '600px' }}>
+                            <Flex style={{ width: '100%', height: '600px', marginBottom: '40px' }}>
                                 <iframe
                                     style={{
                                         width: '100%',
@@ -357,16 +363,12 @@ export default function About() {
                                     src="https://codechef-api.vercel.app/rating/mehtavarin"
                                 ></iframe>
                             </Flex>
-                            <Heading
-                                as="h2"
-                                id={about.technical.title}
-                                variant="display-strong-s" marginBottom="40">
-                                {about.technical.title}
-                            </Heading>
+
+                            {/* LeetCode Static Card */}
                             <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
-                                LeetCode
+                                LeetCode (Static Card)
                             </Text>
-                            <Flex style={{ width: '120%', height: '600px' }}>
+                            <Flex style={{ width: '100%', height: '300px', marginBottom: '40px' }}>
                                 <iframe
                                     style={{
                                         width: '100%',
@@ -376,8 +378,17 @@ export default function About() {
                                     src="https://leetcard.jacoblin.cool/vrinamehta?theme=dark&ext=contest"
                                 ></iframe>
                             </Flex>
+
+                            {/* LeetCode Interactive Graph */}
+                            <Text style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
+                                LeetCode (Interactive Graph)
+                            </Text>
+                            <Flex style={{ width: '100%', height: '600px', marginBottom: '40px' }}>
+                                <LeetCodeRatingChart />
+                            </Flex>
                         </>
                     )}
+
                 </Flex>
             </Flex>
         </Flex >
