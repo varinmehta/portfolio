@@ -145,7 +145,7 @@ const about = {
         institutions: [
             {
                 name: "Sardar Patel Institute of Technology - University of Mumbai",
-                cgpa: "8.61",
+                cgpa: "8.74",
                 description: <>Computer Engineering</>,
                 extra: (
                     <>
