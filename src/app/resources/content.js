@@ -6,7 +6,7 @@ const person = {
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role: "Third year Computer Engineering student",
+    role: "Final year Computer Engineering student",
     avatar: "/images/avatar.jpg",
     location: "Asia/Calcutta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ["English", "Gujarati", "Hindi"], // optional: Leave the array empty if you don't want to display languages
@@ -55,7 +55,7 @@ const home = {
     headline: <>Web developer and Competitive programmer</>,
     subline: (
         <>
-            I'm Varin, a third-year Computer Engineering student at{" "}
+            I'm Varin, a final-year Computer Engineering student at{" "}
             <InlineCode>Sardar Patel Institute of Technology</InlineCode>.
             Outside of academics, I focus on problem-solving and working on my
             projects.
